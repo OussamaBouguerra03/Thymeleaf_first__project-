@@ -38,5 +38,5 @@ public class Transaction {
 
     @ManyToOne
 @JoinColumn(name = "customer_id", nullable = false)  
-private Customer customer; // Assurez-vous que ceci correspond à 'mappedBy'
+private Customer customer;  
 }
