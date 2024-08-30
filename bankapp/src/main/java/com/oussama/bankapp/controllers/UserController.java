@@ -41,7 +41,7 @@ public class UserController {
     }
     @GetMapping("register")
     public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new UserRegisterDTO()); // Initialisez l'objet UserRegisterDTO
+        model.addAttribute("user", new UserRegisterDTO());  
         return "register";  
     }
 
