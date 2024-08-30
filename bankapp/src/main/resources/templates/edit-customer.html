@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Customer</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+    <h1>Edit Customer</h1>
+    
+    <form th:action="@{/customers/update/{id}(id=${customer.id})}" method="post">
+        <input type="hidden" name="_method" value="put"/>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:value="${customer.name}" required/><br/>
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance" th:value="${customer.balance}" step="0.01" required/><br/>
+        <button type="submit">Update</button>
+    </form>
+    
+    
+    
+    <a href="/customers/list">Back to customers list</a>
+</body>
+</html>

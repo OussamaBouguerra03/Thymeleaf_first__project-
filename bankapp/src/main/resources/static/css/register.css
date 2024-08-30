@@ -1,0 +1,104 @@
+/* src/main/resources/static/css/auth.css */
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Fond clair */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff; /* Fond blanc pour le formulaire */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+h2 {
+    color: #007bff; /* Bleu principal */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #007bff; /* Bleu pour le bouton */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+}
+
+.message {
+    color: #dc3545; /* Rouge pour les messages d'erreur */
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #007bff; /* Bleu pour les liens */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Styles pour les messages d'erreur et de succès */
+.error {
+    color: #dc3545; /* Rouge pour les erreurs */
+    margin-bottom: 10px;
+}
+
+.message {
+    color: #dc3545; /* Rouge pour les messages d'erreur */
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Ajoutez des styles pour les messages de succès si nécessaire */
+.success {
+    color: #28a745; /* Vert pour les messages de succès */
+    margin-top: 10px;
+    font-size: 14px;
+}

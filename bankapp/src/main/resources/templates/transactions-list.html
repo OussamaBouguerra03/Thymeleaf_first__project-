@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transactions List</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+    <h1>Transactions List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Amount</th>
+                <th>Customer ID</th>
+                <th>Type</th>
+                <th>Transaction Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transaction : ${transactions}">
+                <td th:text="${transaction.id}"></td>
+                <td th:text="${transaction.amount}"></td>
+                <td th:text="${transaction.customerId}"></td>
+                <td th:text="${transaction.type}"></td>
+                <td th:text="${transaction.transactionDate}"></td>
+                <td>
+                    <a th:href="@{/transactions/{id}(id=${transaction.id})}">View</a>
+                    <form th:action="@{/transactions/delete/{id}(id=${transaction.id})}" method="post" style="display:inline;">
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/transactions/my/deposit}">Deposit</a>
+    <a th:href="@{/transactions/my/withdraw}">Withdraw</a>
+</body>
+</html>

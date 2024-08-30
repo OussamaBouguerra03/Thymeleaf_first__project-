@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+    <h1>Result</h1>
+    
+    <p th:if="${message}" th:text="${message}">Message</p>
+    <p th:if="${error}" th:text="${error}">Error</p>
+    
+    <a href="/transactions/list">Back to transactions list</a>
+</body>
+</html>

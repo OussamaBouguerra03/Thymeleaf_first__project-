@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/" th:href="@{/}">Home</a></li>
+                <li><a href="/transactions/list" th:href="@{/transactions/list}">Transactions</a></li>
+                <li><a href="/profile" th:href="@{/profile}">Profile</a></li>
+                <!-- Add more nav links here -->
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <ul>
+            <li><a href="/dashboard" th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a href="/settings" th:href="@{/settings}">Settings</a></li>
+            <!-- Add more sidebar links here -->
+        </ul>
+    </aside>
+
+    <main>
+        <div th:fragment="content">
+            <!-- Content will be injected here -->
+        </div>
+    </main>
+</body>
+</html>

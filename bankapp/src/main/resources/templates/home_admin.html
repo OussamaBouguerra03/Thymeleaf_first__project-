@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/home_admin.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+            <nav>
+                <a href="/home">Home</a>
+                <a href="/transactions/list">Transactions</a>
+                <a href="/customers/create">Add Customer</a>
+                <a href="/customers/list">Customer List</a>
+                <a href="/logout">Logout</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>All Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                         <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Customer Username</th> <!-- Changement du titre -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="transaction : ${transactions}">
+                         <td th:text="${transaction.transactionDate}"></td>
+                        <td th:text="${transaction.type}"></td>
+                        <td th:text="${transaction.amount}"></td>
+                        <td th:text="${transaction.customerUsername}"></td> <!-- Utilisation du username -->
+                    </tr>
+                    <tr th:if="${#lists.isEmpty(transactions)}">
+                        <td colspan="5">No transactions available.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

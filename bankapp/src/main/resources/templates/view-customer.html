@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Customer</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
+</head>
+<body>
+    <h1>Customer Details</h1>
+    
+    <p>ID: <span th:text="${customer.id}"></span></p>
+    <p>Name: <span th:text="${customer.name}"></span></p>
+    <p>Balance: <span th:text="${customer.balance}"></span></p>
+    
+    <a th:href="@{/customers/edit/{id}(id=${customer.id})}">Edit</a>
+    <form th:action="@{/customers/{id}(id=${customer.id})}" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+        <button type="submit">Delete</button>
+    </form>
+    
+    <a href="/customers/list">Back to customers list</a>
+</body>
+</html>
