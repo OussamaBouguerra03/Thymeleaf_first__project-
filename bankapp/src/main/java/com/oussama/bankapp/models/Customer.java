@@ -34,11 +34,11 @@ public class Customer {
     @Column(name = "balance", nullable = false)  
     private double balance;
     
-    @Column(name = "username", unique = true, nullable = false) // Ajoutez cette ligne pour l'attribut username
+    @Column(name = "username", unique = true, nullable = false)  
     private String username;
 
     
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Transaction> transactions; // Assurez-vous que 'customer' est bien la propriété correspondante
+    private List<Transaction> transactions;  
     
 }
